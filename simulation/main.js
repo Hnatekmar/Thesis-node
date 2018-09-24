@@ -96,7 +96,7 @@ export default class Simulation {
     if (this.world !== undefined) {
       this.car.getComponent('car').fitness = 0
       let body = this.car.getComponent('physics').body
-      fillNaN(body, 0.0)
+      //fillNaN(body, 0.0)
       body.allowSleep = false
       if (body.sleepState === p2.Body.SLEEPING) {
         body.wakeUp()

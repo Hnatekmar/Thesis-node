@@ -5,17 +5,19 @@ const fs = require('fs')
 const cluster = require('cluster')
 const os = require('os')
 
+const NUMBER_OF_THREADS = os.cpus().length
+
 let neat = new NEAT.Neat(
     37,
     6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
     null,
     {
-        popsize: (os.cpus().length - 1) * 128,
+        popsize: NUMBER_OF_THREADS * 256,
         mutation: NEAT.methods.mutation.ALL,
         mutationRate: 0.25,
         network: new NEAT.architect.Random(
             37,
-            128,
+            256,
             6
         )
     }
@@ -58,10 +60,10 @@ function evolve () {
 if (cluster.isMaster) {
     let children = []
     let count = 0
-    for (let i = 0; i < os.cpus().length - 1; i++) {
+    for (let i = 0; i < NUMBER_OF_THREADS; i++) {
         children.push(cluster.fork())
     }
-    for (let i = 0; i < os.cpus().length - 1; i++) {
+    for (let i = 0; i < NUMBER_OF_THREADS; i++) {
         children[i].on('message', (msg) => {
             count += 1
             neat.population[msg['index']].score = msg['score']
@@ -93,7 +95,7 @@ if (cluster.isMaster) {
     process.on('message', (info) => {
         for (let i = 0; i < info['json'].length; i++) {
             let genom = NEAT.Network.fromJSON(info['json'][i])
-            let score = simulation.evalGenome(1 / 2.0, genom)
+            let score = simulation.evalGenome(1 / 30.0, genom)
             process.send({
                 'score': score,
                 'index': info['index'] + i
