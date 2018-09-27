@@ -1,4 +1,4 @@
-const suite = new require('benchmark').Benchmark.Suite()
+const benchmark = new require('nodemark')
 const Simulation = require('./simulation/main.js').default
 const NEAT = require('neataptic')
 
@@ -7,7 +7,7 @@ const neat = new NEAT.Neat(
     6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
     null,
     {
-        popsize: 256,
+        popsize: 4,
         mutation: NEAT.methods.mutation.ALL,
         mutationRate: 0.25,
         network: new NEAT.architect.Random(
@@ -18,12 +18,13 @@ const neat = new NEAT.Neat(
     }
 )
 
-
 let sim = new Simulation(60)
-suite.add('SimulationStep', function () {	
+function generation() {
 	for (let i in neat.population) {
-		sim.evalGenome(1000 / 30.0, neat.population[i])
+		sim.evalGenome(1 / 30.0, neat.population[i])
 	}
-}).on('complete', function() {
-	console.log(this[0].toString())
-}).run({ 'async': true })
+}
+
+let result = benchmark(generation)
+console.log(result)
+console.log(result.milliseconds() + ' ms')

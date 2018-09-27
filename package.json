@@ -24,6 +24,7 @@
     "microtime": "^2.1.8",
     "multiprocessing": "^1.1.1",
     "neataptic": "^1.4.7",
+    "nodemark": "^0.3.0",
     "npm": "^6.4.1",
     "os": "^0.1.1",
     "p2": "^0.7.1",

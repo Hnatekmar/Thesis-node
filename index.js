@@ -5,14 +5,14 @@ const fs = require('fs')
 const cluster = require('cluster')
 const os = require('os')
 
-const NUMBER_OF_THREADS = os.cpus().length
+const NUMBER_OF_THREADS = os.cpus().length - 1
 
 let neat = new NEAT.Neat(
     37,
     6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
     null,
     {
-        popsize: NUMBER_OF_THREADS * 256,
+        popsize: NUMBER_OF_THREADS * 512,
         mutation: NEAT.methods.mutation.ALL,
         mutationRate: 0.25,
         network: new NEAT.architect.Random(

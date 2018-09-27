@@ -112,7 +112,7 @@ module.exports = require("lodash");
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var suite = new __webpack_require__(5).Benchmark.Suite();
+var benchmark = new __webpack_require__(5);
 
 var Simulation = __webpack_require__(8).default;
 
@@ -120,27 +120,28 @@ var NEAT = __webpack_require__(7);
 
 var neat = new NEAT.Neat(37, 6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
 null, {
-  popsize: 256,
+  popsize: 4,
   mutation: NEAT.methods.mutation.ALL,
   mutationRate: 0.25,
   network: new NEAT.architect.Random(37, 128, 6)
 });
 var sim = new Simulation(60);
-suite.add('SimulationStep', function () {
+
+function generation() {
   for (var i in neat.population) {
-    sim.evalGenome(1000 / 30.0, neat.population[i]);
+    sim.evalGenome(1 / 30.0, neat.population[i]);
   }
-}).on('complete', function () {
-  console.log(this[0].toString());
-}).run({
-  'async': true
-});
+}
+
+var result = benchmark(generation);
+console.log(result);
+console.log(result.milliseconds() + ' ms');
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("benchmark");
+module.exports = require("nodemark");
 
 /***/ }),
 /* 6 */
