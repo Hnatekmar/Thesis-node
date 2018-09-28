@@ -1,13 +1,14 @@
 const benchmark = new require('nodemark')
 const Simulation = require('./simulation/main.js').default
 const NEAT = require('neataptic')
+const fs = require('fs')
 
 const neat = new NEAT.Neat(
     37,
     6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
     null,
     {
-        popsize: 4,
+        popsize: 8,
         mutation: NEAT.methods.mutation.ALL,
         mutationRate: 0.25,
         network: new NEAT.architect.Random(
@@ -17,6 +18,13 @@ const neat = new NEAT.Neat(
         )
     }
 )
+
+if (!fs.existsSync('population.json')) {
+	fs.writeFileSync('population.json', JSON.stringify(neat.export()))
+} else {
+	const jsonData = fs.readFileSync('population.json')
+	neat.import(JSON.parse(jsonData))
+}
 
 let sim = new Simulation(60)
 function generation() {

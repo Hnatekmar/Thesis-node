@@ -114,17 +114,27 @@ module.exports = require("lodash");
 
 var benchmark = new __webpack_require__(5);
 
-var Simulation = __webpack_require__(8).default;
+var Simulation = __webpack_require__(9).default;
 
 var NEAT = __webpack_require__(7);
 
+var fs = __webpack_require__(8);
+
 var neat = new NEAT.Neat(37, 6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
 null, {
-  popsize: 4,
+  popsize: 8,
   mutation: NEAT.methods.mutation.ALL,
   mutationRate: 0.25,
   network: new NEAT.architect.Random(37, 128, 6)
 });
+
+if (!fs.existsSync('population.json')) {
+  fs.writeFileSync('population.json', JSON.stringify(neat.export()));
+} else {
+  var jsonData = fs.readFileSync('population.json');
+  neat.import(JSON.parse(jsonData));
+}
+
 var sim = new Simulation(60);
 
 function generation() {
@@ -157,6 +167,12 @@ module.exports = require("neataptic");
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
+
+/***/ }),
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
