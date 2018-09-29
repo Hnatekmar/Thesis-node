@@ -71,3 +71,9 @@ typings/
 
 # Serverless directories
 .serverless
+
+# Database file
+database.sqlite3
+
+# Idea
+.idea/

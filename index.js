@@ -5,14 +5,26 @@ const fs = require('fs')
 const cluster = require('cluster')
 const os = require('os')
 
-const NUMBER_OF_THREADS = os.cpus().length - 1
+const caminte = require('caminte'),
+    Schema = caminte.Schema,
+    config = {
+        driver: 'sqlite3',
+        database: 'database.sqlite3'
+    };
+
+const schema = new Schema(config.driver, config);
+
+const Genome = require('./Genome')(schema)
+Genome.destroyAll()
+
+const NUMBER_OF_THREADS = os.cpus().length
 
 let neat = new NEAT.Neat(
     37,
     6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
     null,
     {
-        popsize: NUMBER_OF_THREADS * 512,
+        popsize: NUMBER_OF_THREADS * 256,
         mutation: NEAT.methods.mutation.ALL,
         mutationRate: 0.25,
         network: new NEAT.architect.Random(
@@ -41,14 +53,17 @@ function evolve () {
     for (let i = 0; i < neat.popsize - neat.elitism; i++) {
         newPopulation.push(neat.getOffspring())
     }
-    let score = neat.getFittest().score
-    console.log(score)
-    if (score > bestScore) {
-        bestScore = score
-        console.log('Saving best specimen')
-        let jsonBest = JSON.stringify(neat.getFittest().toJSON())
-        fs.writeFileSync("best.json", jsonBest)
+
+    for (let i in neat.population) {
+        let json = neat.population[i].toJSON()
+        let genome = new Genome({
+            genome: json,
+            fitness: neat.population[i].score,
+            generation: neat.generation
+        })
+        genome.save()
     }
+
     delete neat.population
     // Replace the old population with the new population
     neat.population = newPopulation
