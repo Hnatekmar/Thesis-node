@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "benchmark.js",
-    "webpack-build": "webpack -p --progress --config webpack.config.js --mode production",
-    "webpack-profile": "webpack -p --progress --config webpack.profile.js --mode production",
-    "webpack": "npm run webpack-profile & npm run webpack-build"
+    "webpack": "webpack -p --progress --config webpack.config.js --mode production"
   },
   "author": "Martin Hnátek",
   "email": "m.hnatma@gmail.com",
@@ -17,10 +15,9 @@
     "benchmark": "^2.1.4",
     "benchmarkjs": "^0.1.8",
     "caminte": "^0.4.1",
-    "ces": "0.0.4",
-    "chance": "^1.0.16",
     "cluster": "^0.7.7",
     "fs": "0.0.1-security",
+    "jsdom": "^12.2.0",
     "lodash": "^4.17.11",
     "microtime": "^2.1.8",
     "multiprocessing": "^1.1.1",
@@ -28,7 +25,7 @@
     "nodemark": "^0.3.0",
     "npm": "^6.4.1",
     "os": "^0.1.1",
-    "p2": "^0.7.1",
+    "simulation": "git://github.com/Hnatekmar/simulation.git",
     "sqlite3": "^4.0.2",
     "threads": "^0.12.0",
     "webpack-node-externals": "^1.7.2"

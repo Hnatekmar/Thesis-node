@@ -5,7 +5,9 @@ module.exports = {
     target: 'node',
     entry: './index.js',
     output: {
-        filename: './bundle.js'
+        library: 'simulation',
+        libraryTarget: 'umd',
+        filename: 'output.js'
     },
     module: {
         rules: [
