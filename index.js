@@ -17,6 +17,9 @@ if (cluster.isMaster) {
 
 	const Genome = require('./Genome')(sequelize, Sequelize);
 	Genome.sync({force: true});
+    const GenerationInfo = require('./GenerationInfo')(sequelize, Sequelize);
+    GenerationInfo.sync({force: true});
+    GenerationInfo.belongsTo(Genome, {foreignKey: 'fk_genome_id'});
 
 	const NUMBER_OF_THREADS = os.cpus().length;
 
@@ -30,12 +33,20 @@ if (cluster.isMaster) {
 			mutationRate: 0.15
 		}
 	);
-
 	let bestScore = Number.MIN_VALUE;
 	function evolve () {
 		neat.sort();
 		console.log('Generation ' + neat.generation);
-
+		GenerationInfo.create({
+			fk_genome_id: neat.population[0].real_id,
+			type: 'MAX',
+			json: neat.population[0].toJSON()
+        })
+        GenerationInfo.create({
+            fk_genome_id: neat.population[neat.population.length - 1].real_id,
+            type: 'MIN',
+            json: neat.population[neat.population.length - 1].toJSON()
+        })
 		// From https://wagenaartje.github.io/neataptic/docs/neat/
 		let newPopulation = [];
 
@@ -64,8 +75,8 @@ if (cluster.isMaster) {
 	for (let i = 0; i < NUMBER_OF_THREADS; i++) {
 		children[i].on('message', (msg) => {
 			count += 1;
-			let json = neat.population[msg['index']].toJSON();
 			neat.population[msg['index']].score = msg['score']
+			neat.population[msg['index']].real_id = msg['index'] + neat.generation * neat.population.length
 			Genome.create({
 				fitness: msg['score'],
 				generation: neat.generation
