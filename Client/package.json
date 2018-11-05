@@ -2,7 +2,7 @@
   "name": "simulation",
   "version": "1.0.0",
   "description": "Simulation for my thesis",
-  "main": "Client/index.js",
+  "main": "Server/index.js",
   "scripts": {
     "test": "benchmark.js",
     "webpack": "webpack -p --progress --config webpack.config.js --mode production"
@@ -11,27 +11,12 @@
   "email": "m.hnatma@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "async": "^2.6.1",
-    "axios": "^0.18.0",
-    "benchmark": "^2.1.4",
-    "benchmarkjs": "^0.1.8",
-    "caminte": "^0.4.1",
-    "cluster": "^0.7.7",
-    "express": "^4.16.4",
-    "fs": "0.0.1-security",
-    "jsdom": "^12.2.0",
-    "lodash": "^4.17.11",
-    "microtime": "^2.1.8",
-    "multiprocessing": "^1.1.1",
+    "babel-polyfill": "^6.26.0",
     "neataptic": "^1.4.7",
-    "nodemark": "^0.3.0",
-    "npm": "^6.4.1",
-    "os": "^0.1.1",
-    "pg": "^7.5.0",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^4.41.0",
-    "simulation": "git://github.com/Hnatekmar/simulation.git",
-    "threads": "^0.12.0"
+    "pg": "^7.6.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "sequelize": "^4.41.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",

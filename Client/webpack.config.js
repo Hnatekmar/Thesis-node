@@ -3,11 +3,11 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     target: 'node',
-    entry: './index.js',
+    entry: './client.js',
     output: {
         library: 'simulation',
         libraryTarget: 'umd',
-        filename: 'output.js'
+        filename: 'client.js'
     },
     module: {
         rules: [
