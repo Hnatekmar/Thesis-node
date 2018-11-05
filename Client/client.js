@@ -24,9 +24,9 @@ let neat = new NEAT.Neat(
     6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
     null,
     {
-        popsize: 1024,
+        popsize: process.env.POPSIZE || 16,
         mutation: NEAT.methods.mutation.ALL,
-        mutationRate: 0.25
+        mutationRate: process.env.MUTATION_RATE || 0.25
     }
 );
 

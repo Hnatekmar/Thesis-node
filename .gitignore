@@ -4,7 +4,7 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+yarn.lock
 # Runtime data
 pids
 *.pid
@@ -77,3 +77,6 @@ database.sqlite3
 
 # Idea
 .idea/
+
+Client/dist/
+Server/dist/
