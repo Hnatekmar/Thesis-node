@@ -14,7 +14,7 @@ if (!cluster.isMaster) {
     const app = express();
     const port = 3000;
     app.listen(port);
-    app.use(bodyParser.json({limit:'100Mb'}));
+    app.use(bodyParser.json({limit:'100mb'}));
 
     const Simulation = require('simulation').default;
 
