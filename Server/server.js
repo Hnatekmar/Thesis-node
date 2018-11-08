@@ -6,33 +6,30 @@ if (!cluster.isMaster) {
 	const NEAT = require('neataptic');
 	let jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 	let { window } = jsdom;
-	global.window = window
-	global.document = window.document
-	global.navigator = {
-	    userAgent: 'node.js',
-	};
-	const app = express();
-	const port = 3000;
-	app.listen(port);
-	app.use(bodyParser.json());
+    global.window = window
+    global.document = window.document
+    global.navigator = {
+        userAgent: 'node.js',
+    };
+    const app = express();
+    const port = 3000;
+    app.listen(port);
+    app.use(bodyParser.json({limit:'100Mb'}));
 
-	const Simulation = require('simulation').default;
-	const simulation = new Simulation(60);
-	app.post('/evaluate', function (req, res) {
-	    let genom = NEAT.Network.fromJSON(req.body);
-	    simulation.evaluate(genom).then(() => {
-		let score = simulation.car.getComponent('car').fitness;
-		res.json({
-		    score: score
-		})
-	    });
-	    for(let i = 0; i <= 60; i += 1.0 / 60.0) {
-		simulation.update(1.0 / 60.0);
-	    }
-	})
+    const Simulation = require('simulation').default;
+
+    function evalGenome (genome) {
+        genome = NEAT.Network.fromJSON(genome);
+        const simulation = new Simulation(60);
+        return simulation.evalGenome(1.0 / 60.0, genome);
+    }
+
+    app.post('/evaluate', function (req, res) {
+        res.json(req.body.map(evalGenome));
+    })
 } else {
-	const cpuCount = require('os').cpus().length;
-	for (let i = 0; i < cpuCount; i++) {
-		cluster.fork();
-	}
+    const cpuCount = require('os').cpus().length;
+    for (let i = 0; i < cpuCount; i++) {
+        cluster.fork();
+    }
 }
