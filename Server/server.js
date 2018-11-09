@@ -18,9 +18,9 @@ if (!cluster.isMaster) {
 
     const Simulation = require('simulation').default;
 
+    const simulation = new Simulation(60);
     function evalGenome (genome) {
         genome = NEAT.Network.fromJSON(genome);
-        const simulation = new Simulation(60);
         return simulation.evalGenome(1.0 / 60.0, genome);
     }
 
