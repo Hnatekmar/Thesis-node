@@ -12,11 +12,14 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "lodash": "^4.17.11",
     "neataptic": "^1.4.7",
-    "pg": "^7.6.0",
+    "p-all": "^1.0.0",
+    "promise.bar": "^0.1.5",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "sequelize": "^4.41.0"
+    "sequelize": "^4.41.0",
+    "synchronize": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",

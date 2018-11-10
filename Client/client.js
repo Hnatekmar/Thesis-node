@@ -1,23 +1,7 @@
 const NEAT = require('neataptic');
 const Request = require('request-promise');
-const Sequelize = require('sequelize');
-
-const options = {
-    dialect: 'postgres',
-    host: 'localhost'
-};
-
-// const sequelize = new Sequelize(
-//     'postgres',
-//     'postgres',
-//     '', options);
-//
-// const GenerationInfo = require('./GenerationInfo')(sequelize, Sequelize);
-// GenerationInfo.sync({force: true});
-//
-// const Genome = require('./Genome')(sequelize, Sequelize);
-// GenerationInfo.belongsTo(Genome, {foreignKey: 'fk_genome_id'});
-// Genome.sync({force: true});
+const _ = require('lodash');
+const pAll = require('p-all');
 
 let neat = new NEAT.Neat(
     37,
@@ -30,18 +14,8 @@ let neat = new NEAT.Neat(
     }
 );
 
-function evolve () {
+async function evolve () {
     neat.sort();
-    // GenerationInfo.create({
-    //     fk_genome_id: neat.population[0].real_id,
-    //     type: 'MAX',
-    //     json: neat.population[0].toJSON()
-    // })
-    // GenerationInfo.create({
-    //     fk_genome_id: neat.population[neat.population.length - 1].real_id,
-    //     type: 'MIN',
-    //     json: neat.population[neat.population.length - 1].toJSON()
-    // })
     // From https://wagenaartje.github.io/neataptic/docs/neat/
     let newPopulation = [];
 
@@ -62,27 +36,39 @@ function evolve () {
 
     neat.generation++
 }
+
 const url = process.env.SERVER + ":" + process.env.PORT;
-async function assignFitness(genome) {
+console.log(url);
+async function assignFitness(genomes, callback) {
+    const jsons = genomes.map((genome) => genome.toJSON());
     return Request.post({
         url: url + '/evaluate',
-        json: genome.toJSON()
+        json: jsons
     }, (error, response, body) => {
         if (error) {
             console.error(error);
             return 0;
         }
-        genome.score = body.score;
+        for (let i = 0; i < body.length; i++) {
+            genomes[i].score = body[i];
+        }
     });
 }
 
-function next() {
+const CHUNK_SIZE = process.env.CHUNK_SIZE || 64;
+const MAXIMUM_CONCURENT_REQUESTS = parseInt(process.env.MAXIMUM_CONCURENT_REQUESTS) || 18;
+console.log('Using chunk size ' + CHUNK_SIZE);
+
+async function next() {
     console.log('Generation ' + neat.generation);
-    let populations = neat.population.map(assignFitness);
-    Promise.all(populations).then(() => {
-        evolve();
-        next();
+    let now = Date.now(); 
+    let chunks = _.chunk(neat.population, CHUNK_SIZE);
+    let promises = chunks.map(function (chunk) {
+		return () => assignFitness(chunk);
     });
+    pAll(promises, {concurrency: MAXIMUM_CONCURENT_REQUESTS}).then(() => {
+	console.log('Done ' + (Date.now() - now) / 1000);
+	evolve().then(next);
+    })
 }
-
 next();

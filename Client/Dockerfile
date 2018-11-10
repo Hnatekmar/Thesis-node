@@ -1,4 +1,6 @@
-FROM node:latest
+FROM node:8-alpine
+
+RUN apk add python make g++
 
 COPY . .
 
