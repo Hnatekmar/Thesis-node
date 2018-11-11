@@ -4,6 +4,7 @@ if (!cluster.isMaster) {
 	let { JSDOM } = require('jsdom');
 	const bodyParser = require('body-parser');
 	const NEAT = require('neataptic');
+	const compression = require('compression');
 	let jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 	let { window } = jsdom;
     global.window = window
@@ -15,6 +16,7 @@ if (!cluster.isMaster) {
     const port = 3000;
     app.listen(port);
     app.use(bodyParser.json({limit:'100mb'}));
+    app.use(compression());
 
     const Simulation = require('simulation').default;
 

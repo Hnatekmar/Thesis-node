@@ -1,7 +1,14 @@
 version: '3'
 
 services:
+  traefik:
+    image: traefik:1.7-alpine
+    command: --api --docker
+    ports:
+    - "80:80"
+    - "8080:8080"
   server:
+    image: hnatekmar/server:v3
     build: .
     ports:
       - "3000:3000"
