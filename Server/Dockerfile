@@ -9,7 +9,5 @@ RUN apk add --no-cache \
     giflib-dev \
     git
 
-COPY . .
-RUN yarn install
-
-CMD node server.js
+COPY clone_and_prepare.sh .
+CMD sh clone_and_prepare.sh
