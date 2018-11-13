@@ -19,7 +19,7 @@ services:
         constraints:
         - node.role == manager
   server:
-    image: hnatekmar/server:v3
+    image: hnatekmar/server:v4
     build: .
     networks:
       - proxy
