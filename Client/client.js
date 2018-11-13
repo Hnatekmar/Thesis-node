@@ -43,18 +43,21 @@ async function assignFitness(genomes) {
     const jsons = genomes.map((genome) => genome.toJSON());
     return Request.post({
         url: url + '/evaluate',
-        json: jsons
-    }, (error, response, body) => {
+        json: jsons,
+        gzip: true
+    }, function (error, response, body) {
         if (error) {
-		throw new Error(error);
+		console.error(error);
+		return assignFitness(genomes).catch(() => assignFitness(genomes));
         }
 	if (response.statusCode !== 200) {
-		throw new Error("Invalid response:\n" + response.statusCode);
+		console.error("Invalid response:\n" + response.statusCode);
+		return assignFitness(genomes).catch(() => assignFitness(genomes));
 	}
         for (let i = 0; i < body.length; i++) {
             genomes[i].score = body[i];
         }
-    }).catch(() => assignFitness(genomes));
+    });
 }
 
 const CHUNK_SIZE = process.env.CHUNK_SIZE || 64;
@@ -66,7 +69,7 @@ async function next() {
     let now = Date.now(); 
     let chunks = _.chunk(neat.population, CHUNK_SIZE);
     let promises = chunks.map(function (chunk) {
-        return () => assignFitness(chunk).catch(() => assignFitness(genomes));
+        return () => assignFitness(chunk).catch(() => assignFitness(chunk));
     });
     pAll(promises, {concurrency: MAXIMUM_CONCURENT_REQUESTS}).then(() => {
 	console.log('Done ' + (Date.now() - now) / 1000);
