@@ -4,6 +4,3 @@ services:
     build: .
     env_file:
       - config.env
-  redis:
-    image: library/redis:5.0-alpine
-    

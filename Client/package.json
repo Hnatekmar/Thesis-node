@@ -15,7 +15,6 @@
     "lodash": "^4.17.11",
     "neataptic": "^1.4.7",
     "p-all": "^1.0.0",
-    "promise.bar": "^0.1.5",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "sequelize": "^4.41.0",

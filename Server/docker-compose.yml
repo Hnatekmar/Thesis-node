@@ -5,11 +5,14 @@ services:
     image: traefik:1.7-alpine
     command: --api --docker --docker.swarmmode
     ports:
+    - "80:80"
     - "8080:8080"
     networks:
       - proxy
     labels:
       - "traefik.backend.loadbalancer.method=drr"
+    volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
     deploy:
       mode: global
       placement:
@@ -22,6 +25,14 @@ services:
       - proxy
     deploy:
       mode: global
+      placement:
+              constraints:
+                      - node.role == worker
       labels:
-        traefik.enable: "true"
-        traefik.port: 3000
+              - "traefik.backend.loadbalancer.method=drr"
+              - "traefik.frontend.rule=Method:POST"
+              - "traefik.enable=true"
+              - "traefik.docker.network=proxy"
+              - "traefik.port=3000"
+networks:
+        proxy:

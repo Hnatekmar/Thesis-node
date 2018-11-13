@@ -1,8 +1,8 @@
 FROM node:8-alpine
 
-RUN apk add python make g++
-
 COPY . .
+
+RUN apk add python make g++
 
 RUN yarn install
 
