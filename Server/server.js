@@ -17,11 +17,11 @@ if (!cluster.isMaster) {
     const simulation = new Simulation(60);
     function evalGenome (genome) {
         genome = NEAT.Network.fromJSON(genome);
-        return simulation.evalGenome(1.0 / 60.0, genome);
+        return simulation.evalGenome(1.0 / 30.0, genome);
     }
     process.on('message', (data) => {
-        data.genomes = data.genomes.map(evalGenome);
-        process.send(data);
+	data.genomes = data.genomes.map(evalGenome);
+	process.send(data);
     });
 } else {
     const express = require('express');
@@ -34,6 +34,7 @@ if (!cluster.isMaster) {
     for (let i = 0; i < cpuCount; i++) {
         threads.push(cluster.fork());
     }
+    console.log(threads);
 
     const app = express();
     const port = 3000;
@@ -42,24 +43,22 @@ if (!cluster.isMaster) {
     app.use(compression());
     let results = {};
     app.post('/evaluate', function (req, res) {
-        let id = Date.now();
-        console.log(id);
-        results[id] = { scores: [], response: res };
-        _.chunk(req.body, Math.max(1, Math.floor(req.body.length / threads.length))).forEach((chunk, index) => {
-            console.log(chunk, index);
-            results[id].scores.push(null);
-            threads[index].send({
-                genomes: chunk,
-                id: id,
-                index: index
-            });
-        });
+	let id = Date.now();
+	results[id] = { scores: [], response: res };
+	_.chunk(req.body, Math.floor(req.body.length / threads.length)).forEach((chunk, index) => {
+		results[id].scores.push(null);
+		threads[index].send({
+					genomes: chunk,
+					id: id,
+					index: index
+                                });
+	});
     });
-    cluster.on('message', (worker, response, _) => {
-        results[response.id].scores[response.index] = response.genomes;
-        if (results[response.id].scores.every((x) => x !== null)) {
-            results[response.id].response.json(results[response.id].scores.reduce((acc, x) => acc.concat(x), []));
-            delete results[response.id];
-        }
+    cluster.on('message', (worker, response, handle) => {
+	    results[response.id].scores[response.index] = response.genomes;
+	    if (results[response.id].scores.every((x) => x !== null)) {
+		    results[response.id].response.json(results[response.id].scores.reduce((acc, x) => acc.concat(x), []));
+		    delete results[response.id];
+	    }
     });
 }
