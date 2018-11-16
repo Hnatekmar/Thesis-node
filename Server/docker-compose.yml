@@ -21,6 +21,8 @@ services:
   server:
     image: hnatekmar/server:v4
     build: .
+    env_file:
+    - config.env
     networks:
       - proxy
     deploy:
