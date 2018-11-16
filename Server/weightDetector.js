@@ -6,7 +6,6 @@ async function getBestWeight(servers, names, my_ip) {
     let best_score = -Infinity;
     for(let i = 0; i < names.length; i++) {
         let server_url = url.parse(servers[names[i]].url);
-        console.log(server_url);
         if (my_ip !== server_url.hostname) {
             let weight = await request.get('http://' + server_url.hostname + ':3000/weight');
             if (weight > best_score) {
