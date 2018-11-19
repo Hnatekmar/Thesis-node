@@ -42,12 +42,6 @@ if (!cluster.isMaster) {
     app.use(compression());
     let results = {};
 
-    require('./weightDetector').getWeight().then((weight) => {
-        app.get('/weight', function (req, res) {
-            res.send(weight);
-        });
-    });
-
     app.post('/evaluate', function (req, res) {
         let id = Date.now();
         results[id] = { scores: [], response: res };
