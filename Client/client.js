@@ -2,6 +2,7 @@ const NEAT = require('neataptic');
 const Request = require('request-promise');
 const _ = require('lodash');
 const pAll = require('p-all');
+const fs = require('fs');
 
 let neat = new NEAT.Neat(
     37,
@@ -13,13 +14,17 @@ let neat = new NEAT.Neat(
         mutationRate: process.env.MUTATION_RATE || 0.25
     }
 );
+let bestScore = -Infinity;
 
 async function evolve () {
     neat.sort();
     // From https://wagenaartje.github.io/neataptic/docs/neat/
     let newPopulation = [];
 
-    console.log(neat.population[0].score);
+    if(neat.population[0].score > bestScore) {
+        fs.writeFileSync('/data/best.json', JSON.stringify(neat.population[0].toJSON()));
+        bestScore = neat.population[0].score
+    }
     // Elitism
     for (let i = 0; i < neat.elitism; i++) {
         newPopulation.push(neat.population[i]);

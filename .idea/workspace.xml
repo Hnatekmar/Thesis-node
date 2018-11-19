@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="eabb7af9-f6e0-43d3-a33b-80190c5f3502" name="Default Changelist" comment="Added min max statistics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/config.env" beforeDir="false" afterPath="$PROJECT_DIR$/Client/config.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/log" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -144,6 +147,55 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="2051843675">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Dockerfile" value="37" />
+          <entry key="env" value="34" />
+          <entry key="js" value="5247" />
+          <entry key="json" value="4" />
+          <entry key="txt" value="148" />
+          <entry key="yml" value="59" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Dockerfile" value="37" />
+          <entry key="JSON" value="4" />
+          <entry key="JavaScript" value="5247" />
+          <entry key="PLAIN_TEXT" value="182" />
+          <entry key="YAML" value="59" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Dockerfile" value="2" />
+          <entry key="env" value="3" />
+          <entry key="js" value="6" />
+          <entry key="json" value="4" />
+          <entry key="yml" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Dockerfile" value="2" />
+          <entry key="JSON" value="4" />
+          <entry key="JavaScript" value="6" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="YAML" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="simulation" />
@@ -153,33 +205,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="660">
+              <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Server/docker-compose.yml">
+        <entry file="file://$PROJECT_DIR$/Client/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="180">
+              <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/Client/config.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            <state relative-caret-position="30">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/build.sh">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Client/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -221,21 +286,25 @@
         <option value="$PROJECT_DIR$/Server;/index.js" />
         <option value="$PROJECT_DIR$/Server/index.js" />
         <option value="$PROJECT_DIR$/Client/index.js" />
-        <option value="$PROJECT_DIR$/Server/package.json" />
         <option value="$PROJECT_DIR$/Server/node_modules/simulation/systems/physics.js" />
         <option value="$PROJECT_DIR$/Client/webpack.config.js" />
-        <option value="$PROJECT_DIR$/Client/docker-compose.yml" />
         <option value="$PROJECT_DIR$/Client/package.json" />
         <option value="$PROJECT_DIR$/Server/pod.yml" />
-        <option value="$PROJECT_DIR$/Client/Dockerfile" />
-        <option value="$PROJECT_DIR$/Client/config.env" />
-        <option value="$PROJECT_DIR$/Client/client.js" />
-        <option value="$PROJECT_DIR$/Server/server.js" />
         <option value="$PROJECT_DIR$/Server/Dockerfile" />
         <option value="$PROJECT_DIR$/Server/NGINX/Dockerfile" />
         <option value="$PROJECT_DIR$/Server/init.sh" />
         <option value="$PROJECT_DIR$/Server/traefik.toml" />
+        <option value="$PROJECT_DIR$/Server/detectWeights.js" />
+        <option value="$PROJECT_DIR$/Server/package.json" />
+        <option value="$PROJECT_DIR$/Server/population.json" />
+        <option value="$PROJECT_DIR$/Server/server.js" />
         <option value="$PROJECT_DIR$/Server/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/Server/weightDetector.js" />
+        <option value="$PROJECT_DIR$/Server/config.env" />
+        <option value="$PROJECT_DIR$/Client/config.env" />
+        <option value="$PROJECT_DIR$/Client/Dockerfile" />
+        <option value="$PROJECT_DIR$/Client/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/Client/client.js" />
       </list>
     </option>
   </component>
@@ -246,7 +315,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/Client/node_modules" />
+    <handled-path value="$PROJECT_DIR$/Server/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
@@ -270,28 +339,29 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="simulation-runner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simulation-runner" type="462c0819:PsiDirectoryNode" />
+              <item name="Thesis-node" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Thesis-node" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="simulation-runner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simulation-runner" type="462c0819:PsiDirectoryNode" />
+              <item name="Thesis-node" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Thesis-node" type="462c0819:PsiDirectoryNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="simulation-runner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simulation-runner" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="Thesis-node" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Thesis-node" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="Container" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,11 +375,11 @@
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Client" />
       <recent name="$PROJECT_DIR$/Server" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Client" />
       <recent name="$PROJECT_DIR$/Server" />
     </key>
@@ -326,19 +396,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.Simulation">
-    <configuration name="Simulation" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="dist/output.js" working-dir="$PROJECT_DIR$">
-      <method v="2">
-        <option name="NpmBeforeRunTask" enabled="true">
-          <package-json value="$PROJECT_DIR$/package.json" />
-          <command value="run" />
-          <scripts>
-            <script value="webpack" />
-          </scripts>
-          <node-interpreter value="project" />
-          <envs />
-        </option>
-      </method>
+  <component name="RunManager" selected="Node.js.Unnamed">
+    <configuration name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/Server">
+      <envs>
+        <env name="HOST" value="http://192.168.1.26" />
+      </envs>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -359,7 +422,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.Simulation" />
+      <item itemvalue="Node.js.Unnamed" />
       <item itemvalue="npm.webpack" />
     </list>
   </component>
@@ -407,6 +470,10 @@
       <workItem from="1541840029020" duration="3082000" />
       <workItem from="1541955512278" duration="1455000" />
       <workItem from="1541956985443" duration="1320000" />
+      <workItem from="1542375505964" duration="3050000" />
+      <workItem from="1542389819869" duration="12126000" />
+      <workItem from="1542535475055" duration="139000" />
+      <workItem from="1542635599967" duration="2552000" />
     </task>
     <task id="LOCAL-00001" summary="Transfer to new format">
       <created>1539955245344</created>
@@ -450,11 +517,46 @@
       <option name="project" value="LOCAL" />
       <updated>1541956209602</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed infinite loop when there is only one element">
+      <created>1542378176174</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1542378176175</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed infinite loop when there is only one element in the array">
+      <created>1542378337421</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1542378337421</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Auto weight setup">
+      <created>1542407144613</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1542407144613</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Auto weight setup">
+      <created>1542407715449</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1542407715449</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added min max statistics">
+      <created>1542408107178</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1542408107178</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151533000" />
+    <option name="totallyTimeSpent" value="169400000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,8 +569,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1282" height="997" extended-state="7" />
-    <editor active="true" />
     <layout>
+      <window_info id="Structure" order="0" sideWeight="0.5038168" side_tool="true" weight="0.25655282" />
+      <window_info id="npm" order="1" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49618322" visible="true" weight="0.25655282" />
+      <window_info id="Favorites" order="3" sideWeight="0.5011389" side_tool="true" weight="0.25416997" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.43606037" weight="0.32915717" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6401906" weight="0.33712983" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997722" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32915717" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.35583797" visible="true" weight="0.25398633" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32924107" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.64416206" side_tool="true" weight="0.25398633" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32915717" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
       <window_info id="Structure" order="0" sideWeight="0.5038168" side_tool="true" weight="0.25655282" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.49618322" visible="true" weight="0.25655282" />
@@ -481,31 +603,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32915717" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.35583797" visible="true" weight="0.25398633" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.35583797" weight="0.25398633" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32924107" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.64416206" side_tool="true" weight="0.25398633" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32915717" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Structure" order="0" sideWeight="0.50158226" side_tool="true" weight="0.35504368" />
-      <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49841774" visible="true" weight="0.35504368" />
-      <window_info id="Favorites" order="3" sideWeight="0.5011389" side_tool="true" weight="0.25416997" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.43606037" weight="0.32915717" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6401906" weight="0.33712983" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997722" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32915717" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.35583797" visible="true" weight="0.28018224" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32915717" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32924107" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.64416206" side_tool="true" weight="0.28018224" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -529,27 +630,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Transfer to new format" />
-    <MESSAGE value="Added min max statistics" />
     <MESSAGE value="Preparations for docker-swarm" />
     <MESSAGE value="Server is now able to handle chunks" />
     <MESSAGE value="Valid limit" />
     <MESSAGE value="Adding traefik for load balancing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding traefik for load balancing" />
+    <MESSAGE value="Fixed infinite loop when there is only one element" />
+    <MESSAGE value="Fixed infinite loop when there is only one element in the array" />
+    <MESSAGE value="Auto weight setup" />
+    <MESSAGE value="Added min max statistics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added min max statistics" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/simulation/systems/physics.js" />
-    <entry file="file://$PROJECT_DIR$/simulation/main.js" />
-    <entry file="file://$PROJECT_DIR$/benchmark.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/pixi.js/lib/polyfill/index.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/abab/lib/atob.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/async/dist/async.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/async/dist/async.min.map" />
     <entry file="file://$PROJECT_DIR$/node_modules/simulation/package.json" />
     <entry file="file://$PROJECT_DIR$/node_modules/simulation/dist/main.js" />
     <entry file="file://$PROJECT_DIR$/dist/bundle.js" />
-    <entry file="file://$PROJECT_DIR$/yarn.lock">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock" />
     <entry file="file://$PROJECT_DIR$/node_modules/simulation/webpack.benchmark.js" />
     <entry file="file://$PROJECT_DIR$/test.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/simulation/webpack.build.js" />
@@ -577,13 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/GenerationInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml" />
     <entry file="file://$PROJECT_DIR$/Client">
       <provider selected="true" editor-type-id="text-editor">
@@ -592,21 +683,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/node_modules/bl/test/test.js" />
-    <entry file="file://$PROJECT_DIR$/Client/Genome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/best.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -640,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
@@ -656,13 +726,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/node_modules/express/lib/router/layer.js" />
     <entry file="file://$PROJECT_DIR$/Server/pod.yml" />
-    <entry file="file://$PROJECT_DIR$/Client/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -670,26 +733,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/NGINX/Dockerfile" />
     <entry file="file://$PROJECT_DIR$/Server/init.sh" />
-    <entry file="file://$PROJECT_DIR$/Server/server.js">
+    <entry file="file://$PROJECT_DIR$/Server/traefik.toml" />
+    <entry file="file://$PROJECT_DIR$/Server/build.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="-96">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/population.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="352704" selection-start-column="352704" selection-end-column="352704" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/config.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -700,27 +767,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/config.env">
+    <entry file="file://$PROJECT_DIR$/Server/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/build.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/traefik.toml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="270">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="345">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/weightDetector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Genome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/GenerationInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="42" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/config.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/Container/best.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="71" selection-start-line="24" selection-start-column="71" selection-end-line="24" selection-end-column="71" />
         </state>
       </provider>
     </entry>

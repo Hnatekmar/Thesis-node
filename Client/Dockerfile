@@ -2,6 +2,8 @@ FROM node:8-alpine
 
 COPY . .
 
+VOLUME /data
+
 RUN apk add python make g++
 
 RUN yarn install
