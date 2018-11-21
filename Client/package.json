@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "bull": "^3.5.2",
     "lodash": "^4.17.11",
     "neataptic": "^1.4.7",
     "p-all": "^1.0.0",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
+    "@types/bull": "^3.4.1",
     "babel-loader": "^8.0.2",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",

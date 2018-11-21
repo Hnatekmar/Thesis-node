@@ -1,5 +1,8 @@
 const cluster = require('cluster');
 
+const Queue = require('bull');
+const queue = new Queue('io', 'redis://redis:6379');
+
 if (!cluster.isMaster) {
     let { JSDOM } = require('jsdom');
     const NEAT = require('neataptic');
@@ -19,47 +22,16 @@ if (!cluster.isMaster) {
         genome = NEAT.Network.fromJSON(genome);
         return simulation.evalGenome(1.0 / 30.0, genome);
     }
-    process.on('message', (data) => {
-        data.genomes = data.genomes.map(evalGenome);
-        process.send(data);
+    queue.process(function (job, jobDone) {
+        let scores = job.data.genomes.map((value, index) => {
+            job.progress(Math.round(job.data.genomes.length / index));
+            return evalGenome(value)
+        });
+        jobDone(scores);
     });
 } else {
-    const express = require('express');
-    const cpuCount = require('os').cpus().length;
-    const bodyParser = require('body-parser');
-    const compression = require('compression');
-    const _ = require('lodash');
-
-    let threads = [];
-    for (let i = 0; i < cpuCount; i++) {
-        threads.push(cluster.fork());
+    const os = require('os');
+    for (let i = 0; i < os.cpus().length; i++) {
+        cluster.fork();
     }
-
-    const app = express();
-    const port = 3000;
-    app.listen(port);
-    app.use(bodyParser.json({limit: '200mb'}));
-    app.use(compression());
-    let results = {};
-
-    app.post('/evaluate', function (req, res) {
-        let id = Date.now();
-        results[id] = { scores: [], response: res };
-        let chunkSize = Math.max(1,  Math.round(req.body.length / threads.length));
-        _.chunk(req.body, chunkSize).forEach((chunk, index) => {
-            results[id].scores.push(null);
-            threads[index].send({
-                genomes: chunk,
-                id: id,
-                index: index
-            });
-        });
-    });
-    cluster.on('message', (worker, response, handle) => {
-        results[response.id].scores[response.index] = response.genomes;
-        if (results[response.id].scores.every((x) => x !== null)) {
-            results[response.id].response.json(results[response.id].scores.reduce((acc, x) => acc.concat(x), []));
-            delete results[response.id];
-        }
-    });
 }

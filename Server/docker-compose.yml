@@ -1,26 +1,23 @@
 version: '3'
 
 services:
-  traefik:
-    image: traefik:1.7-alpine
-    command: --api --docker --docker.swarmmode
+  redis:
+    image: library/redis:latest
     ports:
-    - "80:80"
-    - "8080:8080"
-    networks:
-      - proxy
-    labels:
-      - "traefik.backend.loadbalancer.method=drr"
+      - 6379:6379
+  arena:
+    image: mixmaxhq/arena
+    depends_on:
+      - redis
+    ports:
+      - 4567:4567
     volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-    deploy:
-      mode: global
-      placement:
-        constraints:
-        - node.role == manager
+      - ./index.json:/opt/arena/src/server/config/index.json
   server:
     image: hnatekmar/server:v4
     build: .
+    depends_on:
+      - redis
     env_file:
     - config.env
     networks:
@@ -30,11 +27,5 @@ services:
       placement:
               constraints:
                       - node.role == worker
-      labels:
-              - "traefik.backend.loadbalancer.method=drr"
-              - "traefik.frontend.rule=Method:POST"
-              - "traefik.enable=true"
-              - "traefik.docker.network=proxy"
-              - "traefik.port=3000"
 networks:
         proxy:

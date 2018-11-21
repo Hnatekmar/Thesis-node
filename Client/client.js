@@ -3,6 +3,7 @@ const Request = require('request-promise');
 const _ = require('lodash');
 const pAll = require('p-all');
 const fs = require('fs');
+const Queue = require('bull');
 
 let neat = new NEAT.Neat(
     37,
@@ -14,6 +15,7 @@ let neat = new NEAT.Neat(
         mutationRate: process.env.MUTATION_RATE || 0.25
     }
 );
+
 let bestScore = -Infinity;
 
 async function evolve () {
@@ -24,6 +26,7 @@ async function evolve () {
     if(neat.population[0].score > bestScore) {
         fs.writeFileSync('/data/best.json', JSON.stringify(neat.population[0].toJSON()));
         bestScore = neat.population[0].score
+        console.log(bestScore);
     }
     // Elitism
     for (let i = 0; i < neat.elitism; i++) {
@@ -42,43 +45,32 @@ async function evolve () {
     neat.generation++
 }
 
-const url = process.env.SERVER + ":" + process.env.PORT;
-console.log(url);
-async function assignFitness(genomes) {
-    const jsons = genomes.map((genome) => genome.toJSON());
-    return Request.post({
-        url: url + '/evaluate',
-        json: jsons,
-        gzip: true
-    }, function (error, response, body) {
-        if (error) {
-		console.error(error);
-		return assignFitness(genomes).catch(() => assignFitness(genomes));
-        }
-	if (response.statusCode !== 200) {
-		console.error("Invalid response:\n" + response.statusCode);
-		return assignFitness(genomes).catch(() => assignFitness(genomes));
-	}
-        for (let i = 0; i < body.length; i++) {
-            genomes[i].score = body[i];
-        }
-    });
-}
+const queue = new Queue('io', 'redis://' + process.env.SERVER + ':' + process.env.PORT);
 
 const CHUNK_SIZE = process.env.CHUNK_SIZE || 64;
-const MAXIMUM_CONCURENT_REQUESTS = parseInt(process.env.MAXIMUM_CONCURENT_REQUESTS) || 18;
 console.log('Using chunk size ' + CHUNK_SIZE);
 
 async function next() {
     console.log('Generation ' + neat.generation);
-    let now = Date.now(); 
+    let now = Date.now();
     let chunks = _.chunk(neat.population, CHUNK_SIZE);
-    let promises = chunks.map(function (chunk) {
-        return () => assignFitness(chunk).catch(() => assignFitness(chunk));
+    chunks.forEach(function (chunk, index) {
+        const jsons = chunk.map((genome) => genome.toJSON());
+        queue.add({
+            "index": index,
+            "genomes": jsons
+        });
     });
-    pAll(promises, {concurrency: MAXIMUM_CONCURENT_REQUESTS}).then(() => {
-	console.log('Done ' + (Date.now() - now) / 1000);
-	evolve().then(next);
-    })
+    let completed_count = 0;
+    queue.on('completed', function(job, result) {
+        completed_count += 1;
+        for(let i = 0; result.length; i++) {
+            chunks[job.index][i].score = result[i];
+        }
+        if(completed_count === chunks.length) {
+            console.log('Done ' + (Date.now() - now) / 1000);
+            evolve().then(next);
+        }
+    });
 }
 next();
