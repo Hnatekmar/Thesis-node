@@ -1,7 +1,7 @@
 const cluster = require('cluster');
 
 const Queue = require('bull');
-const queue = new Queue('io', 'redis://' + process.env.HOST + ':6379');
+const queue = new Queue('io', 'redis://' + process.env.HOST + ':' + process.env.PORT);
 
 if (!cluster.isMaster) {
     let { JSDOM } = require('jsdom');
