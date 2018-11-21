@@ -46,13 +46,15 @@ async function evolve () {
 }
 
 const queue = new Queue('io', 'redis://' + process.env.SERVER + ':' + process.env.PORT);
-
+queue.clean(100, 'completed');
 const CHUNK_SIZE = process.env.CHUNK_SIZE || 1;
 console.log('Using chunk size ' + CHUNK_SIZE);
 
+let completed_count = 0;
+let now = 0;
 async function next() {
+    now = Date.now();
     console.log('Generation ' + neat.generation);
-    let now = Date.now();
     neat.population.forEach(function (genome, index) {
         const json = genome.toJSON();
         queue.add({
@@ -60,17 +62,23 @@ async function next() {
             "genome": json
         });
     });
-    let completed_count = 0;
-    queue.on('global:completed', function(job, result) {
-        completed_count += 1;
-        console.log(completed_count);
-        for(let i = 0; result.length; i++) {
-            neat.population[job.index][i].score = result[i];
-        }
-        if(completed_count === chunks.length) {
-            console.log('Done ' + (Date.now() - now) / 1000);
-            evolve().then(next);
-        }
-    });
 }
+
+queue.on('global:failed', function(job, err){
+    // Job failed with reason err!
+    console.error("Job failed: id: " + job.jobId + " with error:" + err);
+    queue.retryJob(job);
+});
+
+queue.on('global:completed', function(job, result) {
+    completed_count += 1;
+    result = JSON.parse(result);
+    neat.population[result.index].score = result.score;
+    if(completed_count === neat.population.length) {
+        console.log('Done ' + (Date.now() - now) / 1000);
+        completed_count = 0;
+        queue.clean(100, 'completed');
+        evolve().then(next);
+    }
+});
 next();
