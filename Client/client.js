@@ -47,25 +47,25 @@ async function evolve () {
 
 const queue = new Queue('io', 'redis://' + process.env.SERVER + ':' + process.env.PORT);
 
-const CHUNK_SIZE = process.env.CHUNK_SIZE || 64;
+const CHUNK_SIZE = process.env.CHUNK_SIZE || 1;
 console.log('Using chunk size ' + CHUNK_SIZE);
 
 async function next() {
     console.log('Generation ' + neat.generation);
     let now = Date.now();
-    let chunks = _.chunk(neat.population, CHUNK_SIZE);
-    chunks.forEach(function (chunk, index) {
-        const jsons = chunk.map((genome) => genome.toJSON());
+    neat.population.forEach(function (genome, index) {
+        const json = genome.toJSON();
         queue.add({
             "index": index,
-            "genomes": jsons
+            "genome": json
         });
     });
     let completed_count = 0;
-    queue.on('completed', function(job, result) {
+    queue.on('global:completed', function(job, result) {
         completed_count += 1;
+        console.log(completed_count);
         for(let i = 0; result.length; i++) {
-            chunks[job.index][i].score = result[i];
+            neat.population[job.index][i].score = result[i];
         }
         if(completed_count === chunks.length) {
             console.log('Done ' + (Date.now() - now) / 1000);

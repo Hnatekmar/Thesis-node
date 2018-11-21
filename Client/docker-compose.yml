@@ -6,5 +6,3 @@ services:
       - config.env
     volumes:
       - ./Container:/data
-    depends_on:
-      - redis

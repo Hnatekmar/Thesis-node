@@ -23,11 +23,9 @@ if (!cluster.isMaster) {
         return simulation.evalGenome(1.0 / 30.0, genome);
     }
     queue.process(function (job, jobDone) {
-        let scores = job.data.genomes.map((value, index) => {
-            job.progress(Math.round(job.data.genomes.length / index));
-            return evalGenome(value)
-        });
-        jobDone(scores);
+        console.log(job);
+        let score = evalGenome(job.data.genome);
+        jobDone(score);
     });
 } else {
     const os = require('os');
