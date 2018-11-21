@@ -1,9 +1,20 @@
 const NEAT = require('neataptic');
-const Request = require('request-promise');
-const _ = require('lodash');
-const pAll = require('p-all');
 const fs = require('fs');
 const Queue = require('bull');
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize('postgres', 'postgres', 'postgres', {
+    host: '192.168.1.26',
+    dialect: 'postgres'
+});
+
+const Generation = sequelize.define('Generation', {
+    min: Sequelize.FLOAT,
+    max: Sequelize.FLOAT,
+    best: Sequelize.JSON
+});
+
+Generation.sync({force: true});
 
 let neat = new NEAT.Neat(
     37,
@@ -24,10 +35,16 @@ async function evolve () {
     let newPopulation = [];
 
     if(neat.population[0].score > bestScore) {
-        fs.writeFileSync('/data/best.json', JSON.stringify(neat.population[0].toJSON()));
         bestScore = neat.population[0].score
         console.log(bestScore);
     }
+
+    Generation.create({
+        min: neat.population[neat.population.length - 1].score,
+        max: neat.population[0].score,
+        best: neat.population[0].toJSON()
+    });
+
     // Elitism
     for (let i = 0; i < neat.elitism; i++) {
         newPopulation.push(neat.population[i]);
