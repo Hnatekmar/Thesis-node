@@ -76,14 +76,15 @@ async function next() {
         const json = genome.toJSON();
         queue.add({
             "index": index,
-            "genome": json
+            "genome": json,
+            "startingPiece": process.env.STARTING_PIECE
         });
     });
 }
 
-queue.on('global:failed', function(job, err){
+queue.on('failed', function(job, err){
     // Job failed with reason err!
-    console.error("Job failed: id: " + job.jobId + " with error:" + err);
+    console.error("Job failed: id: " + job.jobId + " with error: " + err);
     queue.retryJob(job);
 });
 
@@ -91,7 +92,7 @@ queue.on('global:completed', function(job, result) {
     completed_count += 1;
     result = JSON.parse(result);
     neat.population[result.index].score = result.score;
-    if(completed_count === neat.population.length) {
+    if(completed_count === neat.population.length && neat.generation < process.env.NUMBER_OF_GENERATIONS) {
         console.log('Done ' + (Date.now() - now) / 1000);
         completed_count = 0;
         queue.clean(100, 'completed');
