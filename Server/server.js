@@ -20,6 +20,7 @@ if (!cluster.isMaster) {
     const simulation = new Simulation(60);
     function evalGenome (data) {
         genome = NEAT.Network.fromJSON(data.genome);
+        console.log(data.startingPiece)
         return simulation.evalGenome(1.0 / 30.0, data.startingPiece);
     }
     queue.process(function (job, jobDone) {
