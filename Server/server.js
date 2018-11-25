@@ -18,12 +18,12 @@ if (!cluster.isMaster) {
     const Simulation = require('simulation').default;
 
     const simulation = new Simulation(60);
-    function evalGenome (genome) {
-        genome = NEAT.Network.fromJSON(genome);
-        return simulation.evalGenome(1.0 / 30.0, genome);
+    function evalGenome (data) {
+        genome = NEAT.Network.fromJSON(data.genome);
+        return simulation.evalGenome(1.0 / 30.0, data.startingPiece);
     }
     queue.process(function (job, jobDone) {
-        let score = evalGenome(job.data.genome);
+        let score = evalGenome(job.data);
         jobDone(null, {
             index: job.data.index,
             score: score
