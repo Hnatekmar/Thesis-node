@@ -17,10 +17,10 @@ if (!cluster.isMaster) {
 
     const Simulation = require('simulation').default;
 
-    const simulation = new Simulation(60);
+    const simulation = new Simulation(process.env.TIME || 160);
     function evalGenome (data) {
         genome = NEAT.Network.fromJSON(data.genome);
-        return simulation.evalGenome(1.0 / 30.0, genome);
+        return simulation.evalGenome(1.0 / 60.0, genome);
     }
     queue.process(function (job, jobDone) {
         let score = evalGenome(job.data);
@@ -28,6 +28,11 @@ if (!cluster.isMaster) {
             index: job.data.index,
             score: score
         });
+    });
+    queue.on('failed', function(job, err){
+        // Job failed with reason err!
+        console.error("Job failed: id: " + job.jobId + " with error: " + err);
+        queue.retryJob(job);
     });
 } else {
     const os = require('os');
