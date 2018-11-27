@@ -16,6 +16,7 @@ const Generation = sequelize.define('Generation', {
 
 Generation.sync({force: true});
 
+
 let neat = new NEAT.Neat(
     37,
     6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
@@ -23,7 +24,11 @@ let neat = new NEAT.Neat(
     {
         popsize: process.env.POPSIZE || 16,
         mutation: NEAT.methods.mutation.ALL,
-        mutationRate: process.env.MUTATION_RATE || 0.25
+        mutationRate: process.env.MUTATION_RATE || 0.25,
+	elitism: process.env.ELITISM,
+	equal: process.env.EQUAL === 'Yes',
+	selection: NEAT.methods.selection[process.env.SELECTION || 'TOURNAMENT'],
+	clear: true
     }
 );
 
@@ -34,15 +39,15 @@ async function evolve () {
     // From https://wagenaartje.github.io/neataptic/docs/neat/
     let newPopulation = [];
 
-    if(neat.population[0].score > bestScore) {
-        bestScore = neat.population[0].score
+    if(neat.getFittest().score > bestScore) {
+        bestScore = neat.getFittest().score
         console.log(bestScore);
     }
 
     Generation.create({
         min: neat.population[neat.population.length - 1].score,
-        max: neat.population[0].score,
-        best: neat.population[0].toJSON()
+        max: neat.getFittest().score,
+        best: neat.getFittest().toJSON()
     });
 
     // Elitism
