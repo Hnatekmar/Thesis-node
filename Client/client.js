@@ -18,17 +18,17 @@ Generation.sync({force: true});
 
 
 let neat = new NEAT.Neat(
-    37,
-    6, // LEFT, RIGHT, FORWARD, BACKWARDS, BREAK
+    6,
+    8,
     null,
     {
         popsize: process.env.POPSIZE || 16,
         mutation: NEAT.methods.mutation.ALL,
         mutationRate: process.env.MUTATION_RATE || 0.25,
-	elitism: process.env.ELITISM,
-	equal: process.env.EQUAL === 'Yes',
-	selection: NEAT.methods.selection[process.env.SELECTION || 'TOURNAMENT'],
-	clear: true
+        elitism: process.env.ELITISM,
+        equal: process.env.EQUAL === 'Yes',
+        selection: NEAT.methods.selection[process.env.SELECTION || 'TOURNAMENT'],
+        clear: true
     }
 );
 

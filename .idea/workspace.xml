@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eabb7af9-f6e0-43d3-a33b-80190c5f3502" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+            <state relative-caret-position="222">
+              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -31,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="732">
-              <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+            <state relative-caret-position="222">
+              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -50,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/Client/config.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -112,8 +113,8 @@
         <option value="$PROJECT_DIR$/Client/docker-compose.yml" />
         <option value="$PROJECT_DIR$/Server/index.json" />
         <option value="$PROJECT_DIR$/Server/config.env" />
-        <option value="$PROJECT_DIR$/Client/client.js" />
         <option value="$PROJECT_DIR$/Client/config.env" />
+        <option value="$PROJECT_DIR$/Client/client.js" />
         <option value="$PROJECT_DIR$/Server/server.js" />
       </list>
     </option>
@@ -133,6 +134,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,7 +162,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -231,8 +232,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.Unnamed" />
       <item itemvalue="Node.js.Client" />
+      <item itemvalue="Node.js.Unnamed" />
       <item itemvalue="npm.webpack" />
     </list>
   </component>
@@ -439,7 +440,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210832000" />
+    <option name="totallyTimeSpent" value="210907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,7 +453,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1282" height="997" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5038168" side_tool="true" weight="0.25655282" />
       <window_info id="npm" order="1" side_tool="true" />
@@ -466,9 +466,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287827" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.35424942" visible="true" weight="0.24914676" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.35345513" visible="true" weight="0.24914676" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32924107" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.6457506" side_tool="true" weight="0.24914676" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.6465449" side_tool="true" visible="true" weight="0.24914676" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3287827" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -506,7 +506,8 @@
     <MESSAGE value="Postgres integration" />
     <MESSAGE value="Now allows to specify starting piece" />
     <MESSAGE value="Logging for server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logging for server" />
+    <MESSAGE value="New specification" />
+    <option name="LAST_COMMIT_MESSAGE" value="New specification" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/async/dist/async.min.map" />
@@ -698,21 +699,21 @@
     <entry file="file://$PROJECT_DIR$/Client/config.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+        <state relative-caret-position="222">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+        <state relative-caret-position="222">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
         </state>
       </provider>
     </entry>
