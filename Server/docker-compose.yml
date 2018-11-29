@@ -1,18 +1,6 @@
 version: '3'
 
 services:
-  redis:
-    image: library/redis:latest
-    ports:
-      - 6379:6379
-  arena:
-    image: mixmaxhq/arena
-    depends_on:
-      - redis
-    ports:
-      - 4567:4567
-    volumes:
-      - ./index.json:/opt/arena/src/server/config/index.json
   server:
     image: hnatekmar/server:v4
     build: .
