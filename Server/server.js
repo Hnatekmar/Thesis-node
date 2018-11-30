@@ -2,6 +2,7 @@ const cluster = require('cluster');
 
 const Queue = require('bull');
 const queue = new Queue('io', 'redis://' + process.env.HOST + ':' + process.env.PORT);
+const fps = process.env.FPS || 30
 
 if (!cluster.isMaster) {
     let { JSDOM } = require('jsdom');
@@ -20,7 +21,11 @@ if (!cluster.isMaster) {
     const simulation = new Simulation(process.env.TIME || 160);
     function evalGenome (data) {
         genome = NEAT.Network.fromJSON(data.genome);
-        return simulation.evalGenome(1.0 / 30.0, genome);
+        simulation.evaluate(genome, data.startingPiece)
+        while(simulation.isRunning()) {
+            simulation.update(1.0 / fps);
+        }
+        return simulation.fitness()
     }
     queue.process(function (job, jobDone) {
         let score = evalGenome(job.data);
