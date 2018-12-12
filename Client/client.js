@@ -18,8 +18,8 @@ Generation.sync({force: true});
 
 
 let neat = new NEAT.Neat(
-    6,
-    8,
+    parseInt(process.env.INPUTS),
+    parseInt(process.env.OUTPUTS),
     null,
     {
         popsize: process.env.POPSIZE || 16,
@@ -43,11 +43,13 @@ async function evolve () {
         bestScore = neat.getFittest().score
         console.log(bestScore);
     }
-
+    let json = neat.getFittest().toJSON()
+    json.positions = neat.getFittest().positions
+    json.piece = neat.getFittest().piece
     Generation.create({
         min: neat.population[neat.population.length - 1].score,
         max: neat.getFittest().score,
-        best: neat.getFittest().toJSON()
+        best: json
     });
 
     // Elitism
@@ -68,6 +70,8 @@ async function evolve () {
 }
 
 const queue = new Queue('io', 'redis://' + process.env.SERVER + ':' + process.env.PORT);
+queue.clean(100, 'active');
+queue.clean(100, 'wait');
 queue.clean(100, 'completed');
 const CHUNK_SIZE = process.env.CHUNK_SIZE || 1;
 console.log('Using chunk size ' + CHUNK_SIZE);
@@ -82,7 +86,9 @@ async function next() {
         queue.add({
             "index": index,
             "genome": json,
-            "startingPiece": process.env.STARTING_PIECE
+            "startingPiece": process.env.STARTING_PIECE,
+            "dt": parseFloat(process.env.FPS),
+            "sampleRate": parseFloat(process.env.SAMPLE_RATE)
         });
     });
 }
@@ -93,10 +99,13 @@ queue.on('failed', function(job, err){
     queue.retryJob(job);
 });
 
-queue.on('global:completed', function(job, result) {
+queue.on('global:completed', function(job, response) {
     completed_count += 1;
-    result = JSON.parse(result);
-    neat.population[result.index].score = result.score;
+    response = JSON.parse(response);
+
+    neat.population[response.index].score = response.result.score;
+    neat.population[response.index].positions = response.result.positions;
+    neat.population[response.index].piece = process.env.STARTING_PIECE;
     if(completed_count === neat.population.length && neat.generation < process.env.NUMBER_OF_GENERATIONS) {
         console.log('Done ' + (Date.now() - now) / 1000);
         completed_count = 0;
