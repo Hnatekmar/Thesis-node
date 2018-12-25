@@ -40,7 +40,8 @@ if (!cluster.isMaster) {
         let score = evalGenome(job.data);
         jobDone(null, {
             index: job.data.index,
-            result: score
+            result: score,
+            configID: job.data.configID
         });
     });
     queue.on('failed', function(job, err){
