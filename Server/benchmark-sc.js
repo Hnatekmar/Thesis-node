@@ -1,4 +1,4 @@
-const MAX_POPSIZE = 1500;
+const MAX_POPSIZE = 2000;
 const NUMBER_OF_TRIES = 10;
 
 const cluster = require('cluster');
@@ -34,7 +34,7 @@ if (cluster.isMaster) {
         });
     }
 
-    let counter = 100
+    let counter = 1000
 
     let completed_count = 0;
     let i = 0;

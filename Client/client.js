@@ -19,25 +19,25 @@ const Configuration = sequelize.define('Configuration',  {
     config: Sequelize.JSON
 });
 
-
-Generation.belongsTo(Configuration, {
-    foreignKey: {
-        field: 'fk_configuration_id',
-        allowNull: false
-    }
-});
-
-Generation.sync({force: true}).then(() => {
-    Configuration.sync({force: true});
-});
-
 let configs = JSON.parse(process.env.CONFIGS);
 
+Generation.belongsTo(Configuration)
+sequelize.sync();
+
+Configuration.destroy({
+    where:{}
+});
+
+Generation.destroy({
+    where:{}
+});
+
+let promises = []
 for(let i = 0; i < configs.length; i++) {
-    Configuration.create({
+    promises.push(Configuration.create({
         config: configs[i]
     }).then(function (response) {
-        configs[i].configID = response.get('id');
+        configs[i].config = response;
         configs[i].neat = new NEAT.Neat(
             configs[i].INPUTS,
             configs[i].OUTPUTS,
@@ -52,17 +52,19 @@ for(let i = 0; i < configs.length; i++) {
                 clear: true
             }
         );
-        if (i + 1 === configs.length) {
-            next()
-        }
-    })
+    }))
 }
+
+Promise.all(promises).then(next)
 
 
 let bestScore = -Infinity;
 
+let individual_counters = [];
+
 async function evolve () {
-    configs.forEach(({neat, configID}) => {
+    configs.forEach(({neat, config}, configID) => {
+        if (individual_counters[configID] !== undefined && individual_counters[configID] !== 0) return;
         neat.sort();
         // From https://wagenaartje.github.io/neataptic/docs/neat/
         let newPopulation = [];
@@ -77,25 +79,27 @@ async function evolve () {
         Generation.create({
             minimum: neat.population[neat.population.length - 1].score,
             maximum: neat.getFittest().score,
-            best: json,
-            fk_genome_id: configID
+            best: json
+        }, {
+            include: [Configuration]
+        }).then((response) => {
+            response.setConfiguration(config)
+            // Elitism
+            for (let i = 0; i < neat.elitism; i++) {
+                newPopulation.push(neat.population[i]);
+            }
+
+            // Breed the next individuals
+            for (let i = 0; i < neat.popsize - neat.elitism; i++) {
+                newPopulation.push(neat.getOffspring())
+            }
+
+            // Replace the old population with the new population
+            neat.population = newPopulation;
+            neat.mutate();
+
+            neat.generation++
         });
-
-        // Elitism
-        for (let i = 0; i < neat.elitism; i++) {
-            newPopulation.push(neat.population[i]);
-        }
-
-        // Breed the next individuals
-        for (let i = 0; i < neat.popsize - neat.elitism; i++) {
-            newPopulation.push(neat.getOffspring())
-        }
-
-        // Replace the old population with the new population
-        neat.population = newPopulation;
-        neat.mutate();
-
-        neat.generation++
     })
 }
 
@@ -104,12 +108,12 @@ queue.clean(100, 'active');
 queue.clean(100, 'wait');
 queue.clean(100, 'completed');
 
-let completed_count = 0;
 async function next() {
     configs.forEach((config, configID) => {
+        // Ignore populations that are not yet evaluated
+        if (individual_counters[configID] !== undefined && individual_counters[configID] !== 0) return;
         config.neat.population.forEach(function (genome, index) {
             const json = genome.toJSON();
-            completed_count += 1;
             queue.add({
                 "index": index,
                 "genome": json,
@@ -119,8 +123,15 @@ async function next() {
                 "sampleRate": parseFloat(process.env.SAMPLE_RATE)
             });
         });
-    })
+        if (individual_counters[configID] !== undefined) {
+            individual_counters[configID] = config.neat.population.length;
+        } else {
+            individual_counters.push(config.neat.population.length);
+        }
+    });
 }
+
+
 
 queue.on('failed', function(job, err){
     // Job failed with reason err!
@@ -128,15 +139,15 @@ queue.on('failed', function(job, err){
     queue.retryJob(job);
 });
 
+
 queue.on('global:completed', function(job, response) {
     response = JSON.parse(response);
-    completed_count -= 1;
+    individual_counters[response.configID] -= 1;
 
     configs[response.configID].neat.population[response.index].score = response.result.score;
     configs[response.configID].neat.population[response.index].positions = response.result.positions;
     configs[response.configID].neat.population[response.index].piece = process.env.STARTING_PIECE;
-    if(completed_count === 0 && configs[response.configID].neat.generation < process.env.NUMBER_OF_GENERATIONS) {
-        counts[response.configID] = 0;
+    if(individual_counters[response.configID] === 0 && configs[response.configID].neat.generation < process.env.NUMBER_OF_GENERATIONS) {
         queue.clean(100, 'completed');
         evolve().then(next);
     }

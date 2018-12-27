@@ -5,7 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/config.env" beforeDir="false" afterPath="$PROJECT_DIR$/Client/config.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/benchmark-sc.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/benchmark-sc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/benchmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/benchmark.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state relative-caret-position="75">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -33,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="112" column="12" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="12" />
+            <state relative-caret-position="447">
+              <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -42,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/config.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="405">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -107,8 +108,8 @@
         <option value="$PROJECT_DIR$/Server/config.env" />
         <option value="$PROJECT_DIR$/Server/benchmark-sc.js" />
         <option value="$PROJECT_DIR$/Server/benchmark.js" />
-        <option value="$PROJECT_DIR$/Server/server.js" />
         <option value="$PROJECT_DIR$/Client/config.env" />
+        <option value="$PROJECT_DIR$/Server/server.js" />
         <option value="$PROJECT_DIR$/Client/client.js" />
       </list>
     </option>
@@ -140,12 +141,6 @@
               <item name="Thesis-node" type="b2602c69:ProjectViewProjectNode" />
               <item name="Thesis-node" type="462c0819:PsiDirectoryNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Thesis-node" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Thesis-node" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="Container" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Thesis-node" type="b2602c69:ProjectViewProjectNode" />
@@ -197,7 +192,8 @@
         <env name="SERVER" value="192.168.1.26" />
         <env name="PORT" value="32769" />
         <env name="NUMBER_OF_GENERATIONS" value="1500" />
-        <env name="CONFIGS" value="[ { &quot;INPUTS&quot;: 6, &quot;OUTPUTS&quot;: 6, &quot;STARTING_PIECE&quot;: &quot;I&quot;, &quot;POPSIZE&quot;: 100, &quot;MUTATION_RATE&quot;: 0.30, &quot;ELITISM&quot;: 10, &quot;EQUAL&quot;: &quot;Yes&quot;, &quot;TIME&quot;: 120 }, { &quot;INPUTS&quot;: 6, &quot;OUTPUTS&quot;: 4, &quot;STARTING_PIECE&quot;: &quot;I&quot;, &quot;POPSIZE&quot;: 200, &quot;MUTATION_RATE&quot;: 0.30, &quot;ELITISM&quot;: 10, &quot;EQUAL&quot;: &quot;Yes&quot;, &quot;TIME&quot;: 120 } ] " />
+        <env name="CONFIGS" value="[ { &quot;INPUTS&quot;: 6, &quot;OUTPUTS&quot;: 6, &quot;STARTING_PIECE&quot;: &quot;I&quot;, &quot;POPSIZE&quot;: 100, &quot;MUTATION_RATE&quot;: 0.30, &quot;ELITISM&quot;: 10, &quot;EQUAL&quot;: &quot;Yes&quot;, &quot;TIME&quot;: 120 }, { &quot;INPUTS&quot;: 6, &quot;OUTPUTS&quot;: 4, &quot;STARTING_PIECE&quot;: &quot;I&quot;, &quot;POPSIZE&quot;: 1500, &quot;MUTATION_RATE&quot;: 0.30, &quot;ELITISM&quot;: 10, &quot;EQUAL&quot;: &quot;Yes&quot;, &quot;TIME&quot;: 120 } ] " />
+        <env name="FPS" value="0.033" />
       </envs>
       <method v="2" />
     </configuration>
@@ -309,6 +305,11 @@
       <workItem from="1545558990162" duration="1796000" />
       <workItem from="1545682968420" duration="5263000" />
       <workItem from="1545731845108" duration="8622000" />
+      <workItem from="1545750718688" duration="700000" />
+      <workItem from="1545759560505" duration="5263000" />
+      <workItem from="1545813506246" duration="631000" />
+      <workItem from="1545822957827" duration="1869000" />
+      <workItem from="1545895594208" duration="13868000" />
     </task>
     <task id="LOCAL-00001" summary="Transfer to new format">
       <created>1539955245344</created>
@@ -489,7 +490,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278711000" />
+    <option name="totallyTimeSpent" value="301042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -502,23 +503,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1282" height="997" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5038168" side_tool="true" weight="0.25655282" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49618322" visible="true" weight="0.2786753" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49618322" visible="true" weight="0.30048466" />
       <window_info id="Favorites" order="3" sideWeight="0.5011389" side_tool="true" weight="0.25416997" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.43606037" weight="0.32915717" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4434572" weight="0.3367463" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49353796" visible="true" weight="0.3993174" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4789984" visible="true" weight="0.33560863" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49192247" weight="0.3993174" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49757674" weight="0.3287827" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.3489499" weight="0.24687144" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.34824282" weight="0.24598931" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32924107" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50646204" side_tool="true" visible="true" weight="0.3993174" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.52100164" side_tool="true" visible="true" weight="0.33560863" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4983845" weight="0.3287827" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -564,21 +564,7 @@
     <MESSAGE value="Benchmarks" />
     <option name="LAST_COMMIT_MESSAGE" value="Benchmarks" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Client/client.js</url>
-          <line>112</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/simulation/dist/main.js" />
-    <entry file="file://$PROJECT_DIR$/dist/bundle.js" />
     <entry file="file://$PROJECT_DIR$/yarn.lock" />
     <entry file="file://$PROJECT_DIR$/node_modules/simulation/webpack.benchmark.js" />
     <entry file="file://$PROJECT_DIR$/test.js" />
@@ -726,20 +712,6 @@
     <entry file="file://$PROJECT_DIR$/Server/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/benchmark.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/benchmark-sc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/config.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -775,24 +747,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/server.js">
+    <entry file="file://$PROJECT_DIR$/Server/benchmark.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/benchmark-sc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/config.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/node_modules/sequelize/lib/instance-validator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/node_modules/sequelize/lib/dialects/postgres/query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="112" column="12" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="12" />
+        <state relative-caret-position="447">
+          <caret line="129" column="8" selection-start-line="129" selection-start-column="8" selection-end-line="129" selection-end-column="8" />
         </state>
       </provider>
     </entry>

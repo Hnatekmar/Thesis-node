@@ -1,4 +1,4 @@
-const MAX_POPSIZE = 1600;
+const MAX_POPSIZE = 20000;
 const NUMBER_OF_TRIES = 10;
 
 const NEAT = require('neataptic');
@@ -29,7 +29,7 @@ function next(subset) {
     });
 }
 
-let counter = 100
+let counter = 2200
 
 
 queue.clean(100, 'active');
