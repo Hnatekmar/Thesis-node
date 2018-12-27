@@ -1,8 +1,6 @@
 FROM node:8-alpine
 
-COPY . .
-
-VOLUME /data
+WORKDIR /src
 
 RUN apk add python make g++
 

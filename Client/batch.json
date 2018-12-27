@@ -1,0 +1,42 @@
+[
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 100,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 0,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 6,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 100,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 0,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 6,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 100,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 0,
+        "EQUAL": "Yes",
+        "TIME": 120
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 100,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 0,
+        "EQUAL": "Yes",
+        "TIME": 120
+    }
+]
