@@ -2,9 +2,12 @@ const NEAT = require('neataptic');
 const fs = require('fs');
 const Queue = require('bull');
 const Sequelize = require('sequelize');
+const ip = require('ip');
+
+console.log(ip.address())
 
 const sequelize = new Sequelize('postgres', 'postgres', 'postgres', {
-    host: '192.168.1.26',
+    host: 'postgresql',
     dialect: 'postgres',
     operatorsAliases: false
 });
@@ -27,11 +30,11 @@ Generation.belongsTo(Configuration, {
   }
 })
 
-sequelize.sync({force:true}).then(() => {
+sequelize.sync({force: true}).then(() => {
 
   let promises = []
   for(let i = 0; i < configs.length; i++) {
-    promises.push(Configuration.create({
+    let promise = Configuration.create({
       config: configs[i]
     }).then(function (response) {
       configs[i].config = response;
@@ -49,17 +52,14 @@ sequelize.sync({force:true}).then(() => {
           clear: true
         }
       );
-    }))
+    })
+    promises.push(promise)
   }
-
-  let individual_counters = [];
 
   Promise.all(promises).then(next)
 
-
   async function evolve () {
-    configs.forEach(({neat, config}, configID) => {
-      if (individual_counters[configID] !== undefined && individual_counters[configID] !== 0) return;
+    configs.forEach(({neat, config}) => {
       neat.sort();
       // From https://wagenaartje.github.io/neataptic/docs/neat/
       let newPopulation = [];
@@ -91,8 +91,9 @@ sequelize.sync({force:true}).then(() => {
       });
     })
   }
+  let to_complete = 0;
 
-  const queue = new Queue('io', 'redis://' + process.env.SERVER + ':' + process.env.PORT);
+  const queue = new Queue('io', 'redis://redis:6379');
   queue.clean(100, 'active');
   queue.clean(100, 'wait');
   queue.clean(100, 'completed');
@@ -100,8 +101,8 @@ sequelize.sync({force:true}).then(() => {
   async function next() {
     configs.forEach((config, configID) => {
       // Ignore populations that are not yet evaluated
-      if (individual_counters[configID] !== undefined && individual_counters[configID] !== 0) return;
       config.neat.population.forEach(function (genome, index) {
+        to_complete += 1;
         const json = genome.toJSON();
         queue.add({
           "index": index,
@@ -112,11 +113,6 @@ sequelize.sync({force:true}).then(() => {
           "sampleRate": parseFloat(process.env.SAMPLE_RATE)
         });
       });
-      if (individual_counters[configID] !== undefined) {
-        individual_counters[configID] = config.neat.population.length;
-      } else {
-        individual_counters.push(config.neat.population.length);
-      }
     });
   }
 
@@ -131,14 +127,15 @@ sequelize.sync({force:true}).then(() => {
 
   queue.on('global:completed', function(job, response) {
     response = JSON.parse(response);
-    individual_counters[response.configID] -= 1;
-    configs[response.configID].neat.population[response.index].score = response.result.score;
-    configs[response.configID].neat.population[response.index].positions = response.result.positions;
-    configs[response.configID].neat.population[response.index].piece = process.env.STARTING_PIECE;
-    if(response.result.score === null) {
-      console.log(response.result);
+    let population = configs[response.configID].neat.population
+    to_complete -= 1
+    if(response.result.score === undefined) {
+      console.log(response)
     }
-    if(individual_counters[response.configID] === 0 && configs[response.configID].neat.generation < process.env.NUMBER_OF_GENERATIONS) {
+    population[response.index].score = response.result.score;
+    population[response.index].positions = response.result.positions;
+    population[response.index].piece = process.env.STARTING_PIECE;
+    if(to_complete === 0) {
       queue.clean(100, 'completed');
       evolve().then(next);
     }

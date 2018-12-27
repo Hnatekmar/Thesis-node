@@ -1,0 +1,11 @@
+datasources:
+  - name: 'postgre'
+    type: 'postgres'
+    access: 'proxy'
+    org_id: 1
+    url: 'http://postgresql:5432'
+    password: 'postgres'
+    database: 'postgres'
+    is_default: true
+    version: 1
+editable: true

@@ -1,8 +1,45 @@
 version: "3"
 services:
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    entrypoint: redis-server --save "" --appendonly no
+  postgresql:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/provisioning:/etc/grafana/provisioning
+  portainer:
+    image: portainer/portainer
+    ports:
+      - 9000:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/portainer/data:/data
   client:
+    depends_on:
+      - postgresql
+      - redis
     build: .
     env_file:
       - config.env
     volumes:
       - ./:/src
+  arena:
+    image: mixmaxhq/arena
+    volumes:
+      - ./arena/index.json:/opt/arena/src/server/config/index.json
+    ports:
+      - 4567:4567
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080

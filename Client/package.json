@@ -13,6 +13,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "bull": "^3.5.2",
+    "ip": "^1.1.5",
     "lodash": "^4.17.11",
     "neataptic": "^1.4.7",
     "p-all": "^1.0.0",
