@@ -24,8 +24,10 @@ if (!cluster.isMaster) {
         let acc = 0
         let positions = []
         while(simulation.isRunning()) {
-            positions.push(simulation.car.getComponent('physics').body.position)
-            positions[positions.length - 1].push(simulation.car.getComponent('physics').body.angle)
+            let result = simulation.car.getComponent('physics').body.position.slice(0)
+            result = [result[0], result[1]]
+            result.push(simulation.car.getComponent('physics').body.angle)
+            positions.push(result)
             simulation.update(data.dt);
         }
         return {
