@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eabb7af9-f6e0-43d3-a33b-80190c5f3502" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/arena/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/grafana/provisioning/datasources/all.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/batch.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/batch.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/config.env" beforeDir="false" afterPath="$PROJECT_DIR$/Client/config.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,29 +21,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1920">
-              <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+            <state relative-caret-position="406">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/Dockerfile">
+        <entry file="file://$PROJECT_DIR$/Server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="158">
+              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -55,53 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/batch.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/docker-compose.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/grafana/provisioning/datasources/all.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/docker-compose.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/config.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/arena/index.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            <state relative-caret-position="75">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -162,16 +104,16 @@
         <option value="$PROJECT_DIR$/Server/config.env" />
         <option value="$PROJECT_DIR$/Server/benchmark-sc.js" />
         <option value="$PROJECT_DIR$/Server/benchmark.js" />
-        <option value="$PROJECT_DIR$/Server/server.js" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/Client/config.env" />
         <option value="$PROJECT_DIR$/Client/arena/index.js" />
         <option value="$PROJECT_DIR$/Client/arena/index.json" />
         <option value="$PROJECT_DIR$/Client/docker-compose.yml" />
         <option value="$PROJECT_DIR$/Client/Dockerfile" />
+        <option value="$PROJECT_DIR$/Client/grafana/provisioning/datasources/all.yml" />
+        <option value="$PROJECT_DIR$/Server/server.js" />
         <option value="$PROJECT_DIR$/Client/batch.json" />
         <option value="$PROJECT_DIR$/Client/client.js" />
-        <option value="$PROJECT_DIR$/Client/grafana/provisioning/datasources/all.yml" />
       </list>
     </option>
   </component>
@@ -191,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,6 +188,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,14 +223,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.Client.grafana: Compose Deployment">
-    <configuration name="Client" type="NodeJSConfigurationType" path-to-js-file="Client/client.js" working-dir="$PROJECT_DIR$">
+  <component name="RunManager" selected="Node.js.Client">
+    <configuration name="Client" type="NodeJSConfigurationType" node-parameters="--max-old-space-size=8192 " path-to-js-file="Client/client.js" working-dir="$PROJECT_DIR$">
       <envs>
         <env name="SERVER" value="192.168.1.26" />
         <env name="PORT" value="32769" />
         <env name="NUMBER_OF_GENERATIONS" value="1500" />
         <env name="CONFIGS" value="[ { &quot;INPUTS&quot;: 6, &quot;OUTPUTS&quot;: 6, &quot;STARTING_PIECE&quot;: &quot;I&quot;, &quot;POPSIZE&quot;: 100, &quot;MUTATION_RATE&quot;: 0.30, &quot;ELITISM&quot;: 10, &quot;EQUAL&quot;: &quot;Yes&quot;, &quot;TIME&quot;: 120 }, { &quot;INPUTS&quot;: 6, &quot;OUTPUTS&quot;: 4, &quot;STARTING_PIECE&quot;: &quot;I&quot;, &quot;POPSIZE&quot;: 1500, &quot;MUTATION_RATE&quot;: 0.30, &quot;ELITISM&quot;: 10, &quot;EQUAL&quot;: &quot;Yes&quot;, &quot;TIME&quot;: 120 } ] " />
         <env name="FPS" value="0.033" />
+        <env name="SAMPLE_RATE" value="120.0" />
       </envs>
       <method v="2" />
     </configuration>
@@ -309,6 +252,32 @@
       <deployment type="docker-compose.yml">
         <settings>
           <option name="commandLineOptions" value="--build" />
+          <option name="sourceFilePath" value="Client/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Client.arena: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="arena" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Client/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="Client.client: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="client" />
+            </list>
+          </option>
           <option name="sourceFilePath" value="Client/docker-compose.yml" />
         </settings>
       </deployment>
@@ -360,16 +329,20 @@
     </configuration>
     <list>
       <item itemvalue="Docker.Client: Compose Deployment" />
+      <item itemvalue="Docker.Client.postgresql: Compose Deployment" />
+      <item itemvalue="Docker.Client.grafana: Compose Deployment" />
+      <item itemvalue="Docker.Client.arena: Compose Deployment" />
+      <item itemvalue="Docker.Client.client: Compose Deployment" />
       <item itemvalue="Node.js.Server" />
       <item itemvalue="Node.js.Client" />
       <item itemvalue="Node.js.benchmark.js" />
       <item itemvalue="Node.js.benchmark-sc.js" />
       <item itemvalue="npm.webpack" />
-      <item itemvalue="Docker.Client.postgresql: Compose Deployment" />
-      <item itemvalue="Docker.Client.grafana: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Client.client: Compose Deployment" />
+        <item itemvalue="Docker.Client.arena: Compose Deployment" />
         <item itemvalue="Docker.Client.grafana: Compose Deployment" />
         <item itemvalue="Docker.Client.postgresql: Compose Deployment" />
         <item itemvalue="Docker.Client: Compose Deployment" />
@@ -451,7 +424,8 @@
       <workItem from="1545822957827" duration="1869000" />
       <workItem from="1545895594208" duration="14818000" />
       <workItem from="1545926852282" duration="3608000" />
-      <workItem from="1545932873635" duration="9989000" />
+      <workItem from="1545932873635" duration="13940000" />
+      <workItem from="1545983754859" duration="6047000" />
     </task>
     <task id="LOCAL-00001" summary="Transfer to new format">
       <created>1539955245344</created>
@@ -635,11 +609,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545921144438</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Evaluate multiple configurations at once">
+      <created>1545943961870</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1545943961870</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="315589000" />
+    <option name="totallyTimeSpent" value="325587000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -652,11 +633,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1282" height="997" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5038168" side_tool="true" weight="0.25655282" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49618322" visible="true" weight="0.3101777" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.49618322" visible="true" weight="0.31502423" />
       <window_info id="Favorites" order="3" sideWeight="0.5011389" side_tool="true" weight="0.25416997" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.43606037" weight="0.32915717" />
@@ -715,9 +695,51 @@
     <MESSAGE value="Evaluate multiple configurations at once" />
     <option name="LAST_COMMIT_MESSAGE" value="Evaluate multiple configurations at once" />
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="NodeJSConfigurationType">
+        <watch expression="response.result.score" />
+        <watch expression="population[&quot;18&quot;]" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>population[&quot;18&quot;]</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>simulation.fitness()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>await Promise.all(jobs);</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>simulation.fitness()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>neat.population[neat.population.length - 1].score</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>neat.population[neat.population.length - 1].score,</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/simulation/webpack.build.js" />
-    <entry file="file://$PROJECT_DIR$/../simulation-thesis/node_modules/pixi.js/lib/polyfill/index.js" />
     <entry file="file://$PROJECT_DIR$/../simulation-thesis/node_modules/pixi.js/lib/index.js" />
     <entry file="file://$PROJECT_DIR$/../Thesis/src/components/HelloWorld.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -882,27 +904,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/config.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml" />
     <entry file="file://$PROJECT_DIR$/Server/config.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -910,17 +912,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/arena/index.json">
+    <entry file="file://$PROJECT_DIR$/Client/node_modules/bluebird/js/release/async.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="1950">
+          <caret line="130" column="8" selection-start-line="130" selection-start-column="8" selection-end-line="130" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/batch.json">
+    <entry file="file://$PROJECT_DIR$/Client/node_modules/neataptic/src/neat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        <state relative-caret-position="178">
+          <caret line="208" column="11" selection-start-line="208" selection-start-column="11" selection-end-line="208" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/config.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -931,10 +940,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/Client/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="255">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -945,17 +954,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/Server/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/arena/index.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/batch.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1920">
-          <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+        <state relative-caret-position="406">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
         </state>
       </provider>
     </entry>

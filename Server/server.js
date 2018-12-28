@@ -3,7 +3,7 @@ const cluster = require('cluster');
 const Queue = require('bull');
 const queue = new Queue('io', 'redis://' + process.env.HOST + ':' + process.env.PORT);
 
-if (!cluster.isMaster) {
+if (!cluster.isMaster || 1 == 1) {
     let { JSDOM } = require('jsdom');
     const NEAT = require('neataptic');
     let jsdom = new JSDOM('<!doctype html><html><body></body></html>');
