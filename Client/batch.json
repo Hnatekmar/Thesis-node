@@ -3,19 +3,99 @@
         "INPUTS": 6,
         "OUTPUTS": 4,
         "STARTING_PIECE": "I",
-        "POPSIZE": 5,
+        "POPSIZE": 100,
         "MUTATION_RATE": 0.30,
-        "ELITISM": 0,
+        "ELITISM": 5,
         "EQUAL": "Yes",
         "TIME": 60
     },
     {
         "INPUTS": 6,
-        "OUTPUTS": 6,
+        "OUTPUTS": 4,
         "STARTING_PIECE": "I",
-        "POPSIZE": 5,
+        "POPSIZE": 200,
         "MUTATION_RATE": 0.30,
-        "ELITISM": 0,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 300,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 400,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 500,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 600,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 700,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 800,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 900,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
         "EQUAL": "Yes",
         "TIME": 60
     }

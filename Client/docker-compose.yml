@@ -15,8 +15,8 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./grafana/dashboards:/var/lib/grafana/dashboards
-      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards/default.json:/var/lib/grafana/dashboards/default.json
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
   portainer:
     image: portainer/portainer
     ports:
