@@ -133,11 +133,6 @@ sequelize.sync({force: true}).then(async() => {
     population[response.index].score = response.result.score;
     population[response.index].positions = response.result.positions;
     if (to_evaluate === on_completed) {
-      configs.forEach(({neat}, configID) => {
-        if (!neat.population.map((genome) => genome.score).every((score) => score !== undefined)) {
-          let pop = population
-        }
-      });
       on_completed = 0;
       await queue.clean(100, 'completed').then(evolve)
     }
