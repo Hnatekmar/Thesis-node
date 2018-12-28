@@ -24,12 +24,8 @@ if (!cluster.isMaster) {
         let acc = 0
         let positions = []
         while(simulation.isRunning()) {
-            acc += data.dt
-            if(acc >= data.sampleRate) {
-               acc = 0
-               positions.push(simulation.car.getComponent('physics').body.position)
-               positions[positions.length - 1].push(simulation.car.getComponent('physics').body.angle)
-            }
+            positions.push(simulation.car.getComponent('physics').body.position)
+            positions[positions.length - 1].push(simulation.car.getComponent('physics').body.angle)
             simulation.update(data.dt);
         }
         return {
