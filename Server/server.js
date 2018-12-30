@@ -51,7 +51,7 @@ if (!cluster.isMaster) {
     });
 } else {
     const os = require('os');
-    for (let i = 0; i < os.cpus().length - 1; i++) {
+    for (let i = 0; i < os.cpus().length; i++) {
         cluster.fork();
     }
 }
