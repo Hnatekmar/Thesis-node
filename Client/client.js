@@ -111,7 +111,9 @@ sequelize.sync({force: true}).then(async() => {
           "configID": configID,
           "startingPiece": config.STARTING_PIECE,
           "dt": parseFloat(process.env.FPS),
-          "sampleRate": parseFloat(process.env.SAMPLE_RATE)
+          "sampleRate": parseFloat(process.env.SAMPLE_RATE),
+          "time": parseInt(config.TIME),
+          "options": config.OPTIONS
         });
       })
     });

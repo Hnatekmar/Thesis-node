@@ -20,7 +20,8 @@ if (!cluster.isMaster) {
     const simulation = new Simulation(process.env.TIME || 160);
     function evalGenome (data) {
         genome = NEAT.Network.fromJSON(data.genome);
-        simulation.evaluate(genome, data.startingPiece)
+        simulation.frames = data.TIME
+        simulation.evaluate(genome, data.startingPiece, data.options)
         let acc = 0
         let positions = []
         while(simulation.isRunning()) {

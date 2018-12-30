@@ -2,101 +2,154 @@
     {
         "INPUTS": 6,
         "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 100,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 200,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 300,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 400,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 500,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 600,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 700,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 800,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
-        "POPSIZE": 900,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60
-    },
-    {
-        "INPUTS": 6,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I",
+        "STARTING_PIECE": "I basic",
         "POPSIZE": 1000,
         "MUTATION_RATE": 0.30,
         "ELITISM": 5,
         "EQUAL": "Yes",
-        "TIME": 60
+        "TIME": 60,
+        "OPTIONS": {
+        }
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I with obstructions",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+        }
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I advanced",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+        }
+    },
+    {
+        "INPUTS": 7,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I basic",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "inputVelocity": true
+        }
+    },
+    {
+        "INPUTS": 7,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I with obstructions",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "inputVelocity": true
+        }
+    },
+    {
+        "INPUTS": 7,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I advanced",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "inputVelocity": true
+        }
+    },
+    {
+        "INPUTS": 7,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I basic",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "inputWheel": true
+        }
+    },
+    {
+        "INPUTS": 7,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I with obstructions",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "inputWheel": true
+        }
+    },
+    {
+        "INPUTS": 7,
+        "OUTPUTS": 4,
+        "STARTING_PIECE": "I advanced",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "inputWheel": true
+        }
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 5,
+        "STARTING_PIECE": "I basic",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "holdWheel": true
+        }
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 5,
+        "STARTING_PIECE": "I with obstructions",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "holdWheel": true
+        }
+    },
+    {
+        "INPUTS": 6,
+        "OUTPUTS": 5,
+        "STARTING_PIECE": "I advanced",
+        "POPSIZE": 1000,
+        "MUTATION_RATE": 0.30,
+        "ELITISM": 5,
+        "EQUAL": "Yes",
+        "TIME": 60,
+        "OPTIONS": {
+            "holdWheel": true
+        }
     }
 ]

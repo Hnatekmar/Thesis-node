@@ -34,7 +34,7 @@ services:
     volumes:
       - ./:/src
   arena:
-    image: mixmaxhq/arena
+    image: ephillipe/bull-arena
     volumes:
       - ./arena/index.json:/opt/arena/src/server/config/index.json
     ports:
