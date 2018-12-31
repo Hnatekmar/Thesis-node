@@ -12,8 +12,5 @@ services:
       - proxy
     deploy:
       mode: global
-      placement:
-              constraints:
-                      - node.role == worker
 networks:
         proxy:
