@@ -3,11 +3,11 @@
         "INPUTS": 6,
         "OUTPUTS": 4,
         "STARTING_PIECE": "I basic",
-        "POPSIZE": 1000,
+        "POPSIZE": 100,
         "MUTATION_RATE": 0.30,
         "ELITISM": 5,
         "EQUAL": "Yes",
-        "TIME": 60,
+        "TIME": 120,
         "OPTIONS": {
         }
     },
@@ -15,140 +15,68 @@
         "INPUTS": 6,
         "OUTPUTS": 4,
         "STARTING_PIECE": "I with obstructions",
-        "POPSIZE": 1000,
+        "POPSIZE": 100,
         "MUTATION_RATE": 0.30,
         "ELITISM": 5,
         "EQUAL": "Yes",
-        "TIME": 60,
+        "TIME": 120,
         "OPTIONS": {
         }
     },
     {
         "INPUTS": 6,
         "OUTPUTS": 4,
-        "STARTING_PIECE": "I advanced",
-        "POPSIZE": 1000,
+        "STARTING_PIECE": "I advanced left",
+        "POPSIZE": 100,
         "MUTATION_RATE": 0.30,
         "ELITISM": 5,
         "EQUAL": "Yes",
-        "TIME": 60,
+        "TIME": 120,
         "OPTIONS": {
         }
     },
     {
-        "INPUTS": 7,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I basic",
-        "POPSIZE": 1000,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60,
-        "OPTIONS": {
-            "inputVelocity": true
-        }
-    },
-    {
-        "INPUTS": 7,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I with obstructions",
-        "POPSIZE": 1000,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60,
-        "OPTIONS": {
-            "inputVelocity": true
-        }
-    },
-    {
-        "INPUTS": 7,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I advanced",
-        "POPSIZE": 1000,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60,
-        "OPTIONS": {
-            "inputVelocity": true
-        }
-    },
-    {
-        "INPUTS": 7,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I basic",
-        "POPSIZE": 1000,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60,
-        "OPTIONS": {
-            "inputWheel": true
-        }
-    },
-    {
-        "INPUTS": 7,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I with obstructions",
-        "POPSIZE": 1000,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60,
-        "OPTIONS": {
-            "inputWheel": true
-        }
-    },
-    {
-        "INPUTS": 7,
-        "OUTPUTS": 4,
-        "STARTING_PIECE": "I advanced",
-        "POPSIZE": 1000,
-        "MUTATION_RATE": 0.30,
-        "ELITISM": 5,
-        "EQUAL": "Yes",
-        "TIME": 60,
-        "OPTIONS": {
-            "inputWheel": true
-        }
-    },
-    {
-        "INPUTS": 6,
+        "INPUTS": 8,
         "OUTPUTS": 5,
         "STARTING_PIECE": "I basic",
-        "POPSIZE": 1000,
+        "POPSIZE": 100,
         "MUTATION_RATE": 0.30,
         "ELITISM": 5,
         "EQUAL": "Yes",
-        "TIME": 60,
+        "TIME": 120,
         "OPTIONS": {
+            "inputVelocity": true,
+            "inputWheel": true,
             "holdWheel": true
         }
     },
     {
-        "INPUTS": 6,
+        "INPUTS": 8,
         "OUTPUTS": 5,
         "STARTING_PIECE": "I with obstructions",
-        "POPSIZE": 1000,
+        "POPSIZE": 100,
         "MUTATION_RATE": 0.30,
         "ELITISM": 5,
         "EQUAL": "Yes",
-        "TIME": 60,
+        "TIME": 120,
         "OPTIONS": {
+            "inputVelocity": true,
+            "inputWheel": true,
             "holdWheel": true
         }
     },
     {
-        "INPUTS": 6,
+        "INPUTS": 8,
         "OUTPUTS": 5,
-        "STARTING_PIECE": "I advanced",
-        "POPSIZE": 1000,
+        "STARTING_PIECE": "I advanced left",
+        "POPSIZE": 100,
         "MUTATION_RATE": 0.30,
         "ELITISM": 5,
         "EQUAL": "Yes",
-        "TIME": 60,
+        "TIME": 120,
         "OPTIONS": {
+            "inputVelocity": true,
+            "inputWheel": true,
             "holdWheel": true
         }
     }

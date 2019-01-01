@@ -2,9 +2,6 @@ const NEAT = require('neataptic');
 const fs = require('fs');
 const Queue = require('bull');
 const Sequelize = require('sequelize');
-const ip = require('ip');
-
-console.log(ip.address())
 
 const sequelize = new Sequelize('postgres', 'postgres', 'postgres', {
     host: 'postgresql',
